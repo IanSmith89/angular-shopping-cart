@@ -1,3 +1,25 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+.header {
+  border: 1px solid silver;
+  height: 40px;
+}
+
+.tea-list {
+  border: 1px solid silver;
+  border-top: none;
+}
+
+.tea-information {
+  border-left: 1px solid silver;
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
+body {
+  padding-bottom: 50px;
+}

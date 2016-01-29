@@ -1,1 +1,23 @@
-<h1 class="text-center">{{1 + 2}}</h1>
+<div class="header">
+  <div class="col-md-3">
+    <p>
+      Tea
+    </p>
+  </div>
+  <div class="col-md-9 tea-information">
+    <p class="pull-left">
+      Information
+    </p>
+    <div class="form-group pull-right">
+      <label for="priceSort">Sort by price:</label>
+      <select name="priceSort" id="priceSort">
+        <option value="">
+
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <is-tea-info ng-repeat="tea in MC.teaList" tea-data="tea"></is-tea-info>
+</div>

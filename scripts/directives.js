@@ -1,8 +1,14 @@
 'use strict';
 
 angular.module('shoppingApp')
-  .directive('name', [name]);
+  .directive('isTeaInfo', [isTeaInfo]);
 
-function name() {
-  
+function isTeaInfo() {
+  return {
+    restrict: 'E',
+    templateUrl: '../templates/tea-info.template.html',
+    scope: {
+      tea: '=teaData'
+    }
+  };
 }

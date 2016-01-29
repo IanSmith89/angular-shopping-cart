@@ -1,0 +1,47 @@
+<div class="row tea-list">
+  <div class="col-md-3">
+    <img class="img-responsive" src="{{tea.imageUrl}}" />
+  </div>
+  <div class="col-md-9 tea-information">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="pull-left">{{tea.name}}</h2>
+        <div class="form-group pull-right">
+          <label for="quantity">Quantity:</label>
+          <select name="quantity" id="quantity">
+            <option value="1" selected>
+            </option>
+          </select>
+          <button type="submit" class="btn btn-warning">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <strong>Price: </strong>{{tea.price / 100 | currency}}
+        </p>
+        <p>
+          <strong>Caffeine Scale: </strong>{{tea.caffeineScale}}
+        </p>
+        <p>
+          <strong>Ingredients: </strong>{{tea.ingredients}}
+        </p>
+        <p>
+          <strong>Rating: </strong>{{tea.rating}}
+        </p>
+        <p>
+          <strong>In Stock?: </strong><span ng-show="tea.inStock">Yes</span><span ng-hide="tea.inStock">No</span>
+        </p>
+        <p>
+          <strong>Categories:</strong>
+        </p>
+        <ul>
+          <li ng-repeat="category in tea.categories">
+            {{category}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
