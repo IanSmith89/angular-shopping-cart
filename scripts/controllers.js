@@ -12,4 +12,5 @@ angular.module('shoppingApp')
 function MainController(teaData) {
   var vm = this;
   vm.teaList = teaData.getAll();
+  vm.categoryList = teaData.getCategories(vm.teaList);
 }

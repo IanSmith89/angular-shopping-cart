@@ -117,6 +117,20 @@ function teaData() {
         __v: 0,
         categories: ["spring", "warm", "winter"]
       }];
+    },
+    getCategories: function(arr) {
+      var returnArr = [];
+      arr.forEach(function(tea) {
+        for (var i = 0; i < tea.categories.length; i++) {
+          returnArr.push(tea.categories[i]);
+        }
+      });
+      return returnArr.reduce(function(a, b) {
+        if (a.indexOf(b) < 0) {
+          a.push(b);
+        }
+        return a;
+      }, []);
     }
   };
 }

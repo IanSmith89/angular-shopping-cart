@@ -1,23 +1,49 @@
-<div class="header">
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group pull-left">
+      <label for="catSearch">Search by category:</label>
+      <select name="catSearch" id="catSearch" ng-model="MC.catSearch">
+        <option value="" selected>
+          All
+        </option>
+        <option ng-repeat="category in MC.categoryList" value="{{category}}">
+          {{category}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group pull-left">
+      <label for="nameSearch">Search by name:</label>
+      <input type="text" name="nameSearch" id="nameSearch" ng-model="MC.nameSearch"/>
+    </div>
+    <button type="link" class="btn btn-danger pull-right">
+      <strong>Checkout</strong> | Bag: Empty!</button>
+  </div>
+</div>
+<div class="row header">
   <div class="col-md-3">
-    <p>
+    <p class="header-text">
       Tea
     </p>
   </div>
-  <div class="col-md-9 tea-information">
-    <p class="pull-left">
+  <div class="col-md-9 header-info">
+    <p class="pull-left header-text">
       Information
     </p>
-    <div class="form-group pull-right">
+    <div class="form-group pull-right header-text">
       <label for="priceSort">Sort by price:</label>
-      <select name="priceSort" id="priceSort">
-        <option value="">
-
+      <select name="priceSort" id="priceSort" ng-model="MC.priceSort">
+        <option value="price">
+          Lowest
+        </option>
+        <option value="-price">
+          Highest
         </option>
       </select>
     </div>
   </div>
 </div>
-<div class="col-md-12">
-  <is-tea-info ng-repeat="tea in MC.teaList" tea-data="tea"></is-tea-info>
+<div class="row">
+  <div class="col-md-12">
+    <is-tea-info ng-repeat="tea in MC.teaList | filter : MC.catSearch | filter : MC.nameSearch | orderBy : MC.priceSort" tea-data="tea"></is-tea-info>
+  </div>
 </div>
